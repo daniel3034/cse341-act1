@@ -1,7 +1,10 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-const MongoClient = require('mongodb').MongoClient;
+const express = require('express');
+const contacts = express.Router();
+
+const { MongoClient, ObjectId } = require('mongodb');
 
 let database;
 
@@ -29,7 +32,33 @@ const getDatabase = () => {
     return database;
 }
 
+// GET all contacts
+contacts.get('/', async (req, res) => {
+    try {
+        const db = getDatabase();
+        const contactsList = await db.collection('contacts').find().toArray();
+        res.status(200).json(contactsList);
+    } catch (err) {
+        res.status(500).json({ message: 'Error retrieving contacts' });
+    }
+});
+
+// GET a contact by ID
+contacts.get('/:id', async (req, res) => {
+    try {
+        const db = getDatabase();
+        const contact = await db.collection('contacts').findOne({ _id: new ObjectId(req.params.id) });
+        if (!contact) {
+            return res.status(404).json({ message: 'Contact not found' });
+        }
+        res.status(200).json(contact);
+    } catch (err) {
+        res.status(500).json({ message: 'Error retrieving contact' });
+    }
+});
+
 module.exports = {
     initDb,
-    getDatabase
+    getDatabase,
+    contacts
 };

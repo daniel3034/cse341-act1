@@ -22,3 +22,8 @@ mongodb.initDb((err) => {
 });
 // This code initializes a MongoDB connection and starts the web server.
 // If there is an error connecting to the database, it logs the error. Otherwise, it starts the server.
+
+
+// Router for contacts
+const contactsRoutes = require('./routes/contacts').contacts;
+app.use('/contacts', contactsRoutes);
