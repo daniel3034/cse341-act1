@@ -1,0 +1,5 @@
+// Get all contacts
+GET https://cse341-act1.onrender.com/contacts
+
+// Get a contact by ID
+GET https://cse341-act1.onrender.com/contacts/6824d301ca63d19e25869876
