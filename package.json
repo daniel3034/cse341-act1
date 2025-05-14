@@ -19,6 +19,8 @@
   "homepage": "https://github.com/daniel3034/cse341-act1#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.16.0"
   }
 }
