@@ -1,0 +1,24 @@
+{
+  "name": "cse341-act1",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel3034/cse341-act1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel3034/cse341-act1/issues"
+  },
+  "homepage": "https://github.com/daniel3034/cse341-act1#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
